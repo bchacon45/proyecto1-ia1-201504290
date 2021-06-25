@@ -25,11 +25,13 @@ function procesarCadena(cadena){
         }
     }
     console.log(matriz);
+    let varResultado;
     if (turno == "1"){
-        
+        varResultado = comprobarPosiciones(matriz);
+    }else if (turno == "0"){
+        varResultado = comprobarPosiciones(matriz);
     }
-
-    return "24";
+    return varResultado;
 }
 
 function comprobarPosiciones(matriz){
@@ -38,6 +40,13 @@ function comprobarPosiciones(matriz){
         for(let j = 0; j < 8; j++){
             if(matriz[i][j] == 1){
                 posiciones[0] = arribaComprobacion(matriz, j, i);
+                posiciones[1] = abajoComprobacion(matriz, j, i);
+                posiciones[2] = derechaComprobacion(matriz, j, i);
+                posiciones[3] = izquierdaComprobacion(matriz, j, i);
+                posiciones[4] = noresteComprobacion(matriz, j, i);
+                posiciones[5] = noroesteComprobacion(matriz, j, i);
+                posiciones[6] = suroesteComprobacion(matriz, j, i);
+                posiciones[7] = suresteComprobacion(matriz, j, i);
             }
         }
     }
@@ -49,10 +58,114 @@ function arribaComprobacion(matriz, x, y){
     for(let i = y; i >= 0; i--){
         if(matriz[i][x] == 2 || matriz[i][x] == 1){
             return {comidas: 0, X: x, Y: y};
-            posiciones
         }
         else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
 
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function abajoComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function derechaComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function izquierdaComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function noresteComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function noroesteComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function suroesteComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
+        }
+    }
+
+    return {comidas: cantComidas, X: x, Y: y};
+}
+
+function suresteComprobacion(matriz, x, y){
+    let cantComidas = 0;
+
+    for(let i = y; i >= 0; i--){
+        if(matriz[i][x] == 2 || matriz[i][x] == 1){
+            return {comidas: 0, X: x, Y: y};
+        }
+        else if(matriz[i][x] == 0){
+            cantComidas++;
         }
     }
 
